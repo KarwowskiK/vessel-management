@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@vessels-workspace/api": ["libs/core/api/src/index.ts"],
       "@vessels-workspace/emissions": ["libs/features/emissions/src/index.ts"],
       "@vessels-workspace/vessels": ["libs/features/vessels/src/index.ts"]
     }

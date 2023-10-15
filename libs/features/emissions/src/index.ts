@@ -1,3 +1,1 @@
-export * from './lib/lib.routes';
-
-export * from './lib/emissions/emissions.component';
+export * from './lib/emissions.routes';
