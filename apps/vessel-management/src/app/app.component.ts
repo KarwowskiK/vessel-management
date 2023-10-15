@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
-  selector: 'vessels-root',
+  imports: [RouterModule],
+  selector: 'vw-vessel-managment',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

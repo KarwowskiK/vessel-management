@@ -2,7 +2,7 @@
   "name": "vessel-management",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "vessels",
+  "prefix": "vw",
   "sourceRoot": "apps/vessel-management/src",
   "tags": [],
   "targets": {
