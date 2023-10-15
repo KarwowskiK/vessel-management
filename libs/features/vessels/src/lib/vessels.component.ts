@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
+import { CardModule } from 'primeng/card';
 
 import { VesselsComponentStore } from './store/vessels.component.store';
 import { VesselsHttpService } from './services/vessels-http.service';
@@ -12,7 +13,7 @@ import { Vessel } from './models/vessel';
   templateUrl: './vessels.component.html',
   styleUrls: ['./vessels.component.scss'],
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CardModule],
   providers: [VesselsComponentStore, VesselsHttpService, VesselsStoreFacade],
 })
 export class VesselsComponent implements OnInit {

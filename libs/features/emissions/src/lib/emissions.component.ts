@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Observable, tap } from 'rxjs';
+import { Observable } from 'rxjs';
+import { CardModule } from 'primeng/card';
 
 import { EmissionsStoreFacade } from './store/emissions.store.facade';
 import { EmissionsComponentStore } from './store/emissions.component.store';
@@ -12,7 +13,7 @@ import { Emission } from './models/emission';
   templateUrl: './emissions.component.html',
   styleUrls: ['./emissions.component.scss'],
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CardModule],
   providers: [
     EmissionsComponentStore,
     EmissionsHttpService,
