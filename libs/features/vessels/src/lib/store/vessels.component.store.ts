@@ -12,11 +12,11 @@ export interface VesselsState {
 
 @Injectable()
 export class VesselsComponentStore extends ComponentStore<VesselsState> {
+  private vesselsHttpService = inject(VesselsHttpService);
+
   public readonly vessels$: Observable<Vessel[]> = this.select(
     (state) => state.vessels
   );
-
-  private vesselsHttpService = inject(VesselsHttpService);
 
   public getVessels = this.effect<void>((source$) =>
     source$.pipe(
