@@ -1,6 +1,4 @@
-import { Vessel } from "libs/features/vessels/src/lib/models/vessel"
-import { EmmisionTimeSeries } from "../models/emission-time-series";
-import { Emission } from "../models/emission";
+import { Emission, EmmisionTimeSeries, Vessel } from "@vessels-workspace/api";
 
 type EmmisionTimeSeriesKey = keyof Omit<EmmisionTimeSeries, 'report_from_utc' | 'report_to_utc'>;
 

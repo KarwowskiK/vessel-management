@@ -2,12 +2,12 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { ApiService } from '@vessels-workspace/api';
 import { Vessel } from '../models/vessel';
+import { ApiBaseUrl } from '../constants/api-base-url';
 
 @Injectable()
 export class VesselsHttpService {
-  private apiBaseUrl = inject(ApiService).apiBaseUrl;
+  private apiBaseUrl = inject(ApiBaseUrl);
   private http = inject(HttpClient);
 
   public getVesselsData(): Observable<Vessel[]> {

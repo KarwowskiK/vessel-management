@@ -3,8 +3,7 @@ import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { Observable, exhaustMap } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 
-import { Vessel } from '../models/vessel';
-import { VesselsHttpService } from '../services/vessels-http.service';
+import { Vessel, VesselsHttpService } from '@vessels-workspace/api';
 
 export interface VesselsState {
   vessels: Vessel[];

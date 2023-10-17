@@ -1,8 +1,9 @@
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 
+import { Vessel } from '@vessels-workspace/api';
+
 import { VesselsComponentStore } from './vessels.component.store';
-import { Vessel } from '../models/vessel';
 
 @Injectable()
 export class VesselsStoreFacade {

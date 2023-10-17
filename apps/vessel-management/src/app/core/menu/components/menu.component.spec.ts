@@ -9,4 +9,12 @@ describe('MenuComponent', () => {
       imports: [MenuComponent, RouterTestingModule],
     }).compileComponents();
   });
+
+
+  it('should create', () => {
+    const fixture = TestBed.createComponent(MenuComponent);
+    fixture.detectChanges();
+
+    expect(fixture).toBeTruthy();
+  });
 });

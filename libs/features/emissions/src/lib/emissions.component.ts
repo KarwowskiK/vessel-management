@@ -7,10 +7,10 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { HighchartsChartModule } from 'highcharts-angular';
 import * as Highcharts from 'highcharts';
 
+import { EmissionsHttpService, Vessel, VesselsHttpService } from '@vessels-workspace/api';
+
 import { EmissionsStoreFacade } from './store/emissions.store.facade';
 import { EmissionsComponentStore } from './store/emissions.component.store';
-import { EmissionsHttpService } from './services/emissions-http.service';
-import { Vessel } from 'libs/features/vessels/src/lib/models/vessel';
 
 @Component({
   selector: 'vessels-workspace-emissions',
@@ -21,11 +21,12 @@ import { Vessel } from 'libs/features/vessels/src/lib/models/vessel';
   providers: [
     EmissionsComponentStore,
     EmissionsHttpService,
+    VesselsHttpService,
     EmissionsStoreFacade,
   ],
 })
 export class EmissionsComponent implements OnInit {
-  Highcharts: typeof Highcharts = Highcharts;
+  public Highcharts: typeof Highcharts = Highcharts;
   private emissionsStoreFacade = inject(EmissionsStoreFacade);
 
   public readonly gridData$: Observable<Highcharts.Options> = this.emissionsStoreFacade.gridData$;

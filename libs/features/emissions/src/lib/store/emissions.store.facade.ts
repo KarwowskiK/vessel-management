@@ -1,9 +1,10 @@
 import { Injectable, inject } from '@angular/core';
 import { Observable, combineLatest, filter, map } from 'rxjs';
 
+import { Vessel } from '@vessels-workspace/api';
+
 import { EmissionsComponentStore } from './emissions.component.store';
-import { Vessel } from 'libs/features/vessels/src/lib/models/vessel';
-import { prepareChartData } from '../helper/prepare-chart-data';
+import { prepareChartData } from '../helpers/prepare-chart-data';
 
 @Injectable()
 export class EmissionsStoreFacade {

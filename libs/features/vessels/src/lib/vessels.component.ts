@@ -5,11 +5,10 @@ import { CardModule } from 'primeng/card';
 import { AgGridModule } from 'ag-grid-angular';
 import { ColDef } from 'ag-grid-community';
 
-import { VesselsComponentStore } from './store/vessels.component.store';
-import { VesselsHttpService } from './services/vessels-http.service';
-import { VesselsStoreFacade } from './store/vessels.store.facade';
-import { Vessel } from './models/vessel';
+import { Vessel, VesselsHttpService } from '@vessels-workspace/api';
 
+import { VesselsComponentStore } from './store/vessels.component.store';
+import { VesselsStoreFacade } from './store/vessels.store.facade';
 import { columnDefs } from './constant/columns-defs';
 
 @Component({

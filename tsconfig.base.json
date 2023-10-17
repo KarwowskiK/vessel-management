@@ -16,7 +16,7 @@
     "strictNullChecks": false,
     "baseUrl": ".",
     "paths": {
-      "@vessels-workspace/api": ["libs/core/api/src/index.ts"],
+      "@vessels-workspace/api": ["libs/api/src/index.ts"],
       "@vessels-workspace/emissions": ["libs/features/emissions/src/index.ts"],
       "@vessels-workspace/vessels": ["libs/features/vessels/src/index.ts"]
     }

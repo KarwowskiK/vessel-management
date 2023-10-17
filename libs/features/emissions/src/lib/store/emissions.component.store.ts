@@ -3,9 +3,7 @@ import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { Observable, exhaustMap, tap } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 
-import { Emission } from '../models/emission';
-import { EmissionsHttpService } from '../services/emissions-http.service';
-import { Vessel } from 'libs/features/vessels/src/lib/models/vessel';
+import { Emission, EmissionsHttpService, Vessel, VesselsHttpService } from '@vessels-workspace/api';
 
 interface EmissionsState {
   emissions: Emission[];
@@ -32,7 +30,7 @@ export class EmissionsComponentStore extends ComponentStore<EmissionsState> {
         vessels.filter(vessel => emissions.find(emission => vessel.id === emission.id)))
         .pipe(tap((vessel) =>  this.updateSelectedVessel(vessel[0])));
 
-  constructor(private emissionsHttpService: EmissionsHttpService) {
+  constructor(private emissionsHttpService: EmissionsHttpService, private vesselsHttpService: VesselsHttpService) {
     super();
     this.setState({
       emissions: [],
@@ -61,7 +59,7 @@ export class EmissionsComponentStore extends ComponentStore<EmissionsState> {
   public getVesselsList = this.effect<void>((source$) =>
     source$.pipe(
       exhaustMap(() =>
-        this.emissionsHttpService.getVesselsList().pipe(
+        this.vesselsHttpService.getVesselsData().pipe(
           tapResponse({
             next: ((vessels: Vessel[]) => this.patchState({ vessels })),
             error: (error: HttpErrorResponse) => {
