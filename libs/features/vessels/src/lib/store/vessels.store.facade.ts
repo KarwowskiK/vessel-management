@@ -6,11 +6,11 @@ import { Vessel } from '../models/vessel';
 
 @Injectable()
 export class VesselsStoreFacade {
-  private vesselsFacade = inject(VesselsComponentStore);
+  private vesselsStore = inject(VesselsComponentStore);
 
-  public readonly vessels$: Observable<Vessel[]> = this.vesselsFacade.vessels$;
+  public readonly vessels$: Observable<Vessel[]> = this.vesselsStore.vessels$;
 
   public getVessels(): void {
-    this.vesselsFacade.getVessels();
+    this.vesselsStore.getVessels();
   }
 }
