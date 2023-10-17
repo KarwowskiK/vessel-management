@@ -5,7 +5,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 import { Vessel, VesselsHttpService } from '@vessels-workspace/api';
 
-export interface VesselsState {
+interface VesselsState {
   vessels: Vessel[];
 }
 

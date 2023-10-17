@@ -36,11 +36,13 @@ import { EmissionsComponentStore } from './store/emissions.component.store';
   ],
 })
 export class EmissionsComponent implements OnInit {
-  public Highcharts: typeof Highcharts = Highcharts;
   private emissionsStoreFacade = inject(EmissionsStoreFacade);
+
+  public Highcharts: typeof Highcharts = Highcharts;
 
   public readonly gridData$: Observable<Highcharts.Options> =
     this.emissionsStoreFacade.gridData$;
+    
   public readonly filteredVessels$: Observable<Vessel[]> =
     this.emissionsStoreFacade.filteredVessels$;
 

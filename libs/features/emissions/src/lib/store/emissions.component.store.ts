@@ -38,18 +38,6 @@ export class EmissionsComponentStore extends ComponentStore<EmissionsState> {
       )
   ).pipe(tap((vessel) => this.updateSelectedVessel(vessel[0])));
 
-  constructor(
-    private emissionsHttpService: EmissionsHttpService,
-    private vesselsHttpService: VesselsHttpService
-  ) {
-    super();
-    this.setState({
-      emissions: [],
-      vessels: [],
-      selectedVessel: null,
-    });
-  }
-
   public getEmissions = this.effect<void>((source$) =>
     source$.pipe(
       exhaustMap(() =>
@@ -81,6 +69,18 @@ export class EmissionsComponentStore extends ComponentStore<EmissionsState> {
       )
     )
   );
+
+  constructor(
+    private emissionsHttpService: EmissionsHttpService,
+    private vesselsHttpService: VesselsHttpService
+  ) {
+    super();
+    this.setState({
+      emissions: [],
+      vessels: [],
+      selectedVessel: null,
+    });
+  }
 
   public updateSelectedVessel(selectedVessel: Vessel): void {
     this.patchState({ selectedVessel: selectedVessel });
