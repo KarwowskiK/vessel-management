@@ -10,7 +10,7 @@ import { MenuService } from '../services/menu.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
   imports: [MenubarModule],
-  providers: [MenuService]
+  providers: [MenuService],
 })
 export class MenuComponent {
   private menuService = inject(MenuService);

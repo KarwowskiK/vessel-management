@@ -10,17 +10,16 @@ import { prepareChartData } from '../helpers/prepare-chart-data';
 export class EmissionsStoreFacade {
   private emissionsStore = inject(EmissionsComponentStore);
 
-  public readonly gridData$: Observable<Highcharts.Options> = 
-    combineLatest([
-      this.emissionsStore.emission$,
-      this.emissionsStore.selectedVessel$
-    ])
-  .pipe(
+  public readonly gridData$: Observable<Highcharts.Options> = combineLatest([
+    this.emissionsStore.emission$,
+    this.emissionsStore.selectedVessel$,
+  ]).pipe(
     filter(([emission, vessel]) => !!emission && !!vessel),
     map(([emission, vessel]) => prepareChartData(vessel, emission))
   );
 
-  public readonly filteredVessels$: Observable<Vessel[]> = this.emissionsStore.filteredVessels$;
+  public readonly filteredVessels$: Observable<Vessel[]> =
+    this.emissionsStore.filteredVessels$;
 
   public getEmissions(): void {
     this.emissionsStore.getEmissions();

@@ -1,9 +1,9 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
-import { urlParams } from "../constants/url-params";
+import { urlParams } from '../constants/url-params';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NavigationService {
   private readonly baseUrl = '/';
@@ -13,17 +13,10 @@ export class NavigationService {
   }
 
   public getVesselsUrl(): string[] {
-    return [
-      this.baseUrl,
-      urlParams.Vessels
-    ]
+    return [this.baseUrl, urlParams.Vessels];
   }
 
   public getEmissionsUrl(): string[] {
-    return [
-      this.baseUrl,
-      urlParams.Emissions
-    ]
+    return [this.baseUrl, urlParams.Emissions];
   }
-
 }

@@ -10,7 +10,6 @@ import { ApiBaseUrl } from '@vessels-workspace/api';
 
 import { appRoutes } from './app.routes';
 
-
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
@@ -18,7 +17,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     {
       provide: ApiBaseUrl,
-      useValue: 'https://frontendteamfiles.blob.core.windows.net'
-    }
+      useValue: 'https://frontendteamfiles.blob.core.windows.net',
+    },
   ],
 };

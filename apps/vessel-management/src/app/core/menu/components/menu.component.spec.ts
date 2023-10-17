@@ -10,7 +10,6 @@ describe('MenuComponent', () => {
     }).compileComponents();
   });
 
-
   it('should create', () => {
     const fixture = TestBed.createComponent(MenuComponent);
     fixture.detectChanges();

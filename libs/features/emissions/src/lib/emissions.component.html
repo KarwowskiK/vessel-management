@@ -2,11 +2,12 @@
   <p-dropdown
     [options]="filteredVessels$ | async"
     optionLabel="name"
-    (onChange)="vesselChanged($event.value)">
+    (onChange)="vesselChanged($event.value)"
+  >
   </p-dropdown>
   <div class="chartbox">
     <highcharts-chart
-      *ngIf="(gridData$ | async) as gridData; else loader"
+      *ngIf="gridData$ | async as gridData; else loader"
       class="chart"
       [Highcharts]="Highcharts"
       [options]="gridData"

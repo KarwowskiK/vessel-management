@@ -5,7 +5,7 @@ export const appRoutes: Route[] = [
   {
     path: '',
     redirectTo: urlParams.Vessels,
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: `${urlParams.Vessels}`,
@@ -16,5 +16,5 @@ export const appRoutes: Route[] = [
     path: `${urlParams.Emissions}`,
     loadChildren: () =>
       import('@vessels-workspace/emissions').then((m) => m.emissionsRoutes),
-  }
+  },
 ];
